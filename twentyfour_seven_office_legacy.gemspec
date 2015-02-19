@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "twentyfour_seven_office_legacy"
   spec.version       = TwentyfourSevenOfficeLegacy::VERSION
   spec.authors       = ["Peter Skeide"]
-  spec.email         = ["peterskeide@gmail.com"]
+  spec.email         = ["ps@skalar.no"]
   spec.summary       = %q{Client libaray for integrating with the 24SevenOffice legacy web services}
   spec.homepage      = "http://github.com/skalar/twentyfour_seven_office_legacy"
   spec.license       = "MIT"
