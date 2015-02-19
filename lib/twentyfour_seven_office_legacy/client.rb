@@ -47,7 +47,13 @@ module TwentyfourSevenOfficeLegacy
     end
 
     def relations(id)
-      @person_client.call(:get_relations, message: { "personId" => id }, cookies: cookies)
+      res = @person_client.call(:get_relations, message: { "personId" => id }, cookies: cookies)
+      check_result(res)
+      data = res.body[:get_relations_response][:get_relations_result]
+      return [] if data.nil?
+      relation_data = data[:relation_data]
+      relation_data = Array.try_convert(relation_data) || [relation_data]
+      relation_data.map { |rd| RelationData.new(rd) }
     end
 
     def delete_relation(person_id, company_id)
