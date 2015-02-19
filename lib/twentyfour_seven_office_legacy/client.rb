@@ -25,9 +25,10 @@ module TwentyfourSevenOfficeLegacy
       @person_client = Savon.client(person_client_opts)
     end
 
-    # TODO return id
     def save_person_item(person_item)
-      @person_client.call(:save_person, message: person_item.to_hash, cookies: cookies)
+      res = @person_client.call(:save_person, message: person_item.to_hash, cookies: cookies)
+      check_result(res)
+      res.body[:save_person_response][:save_person_result]
     end
 
     def save_person_item_request_str(person_item)
