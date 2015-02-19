@@ -43,7 +43,7 @@ describe TwentyfourSevenOfficeLegacy::PersonItem do
     end
   end
 
-  describe "#attribut_names" do
+  describe "#attribute_names" do
     it "returns an array with all attributes names" do
       expect(attrs).to eq(subject.attribute_names)
     end
