@@ -1,9 +1,16 @@
 require "bundler/setup"
 require "savon"
 require "twentyfour_seven_office_legacy/version"
+require "twentyfour_seven_office_legacy/errors"
 require "twentyfour_seven_office_legacy/model"
+require "twentyfour_seven_office_legacy/credential"
+require "twentyfour_seven_office_legacy/phone_number"
+require "twentyfour_seven_office_legacy/fax_number"
+require "twentyfour_seven_office_legacy/email_address"
 require "twentyfour_seven_office_legacy/relation_data"
+require "twentyfour_seven_office_legacy/address"
 require "twentyfour_seven_office_legacy/person_item"
+require "twentyfour_seven_office_legacy/client"
 
 module TwentyfourSevenOfficeLegacy
   def self.to_xml_data(obj)

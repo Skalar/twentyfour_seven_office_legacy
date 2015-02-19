@@ -9,10 +9,10 @@ module TwentyfourSevenOfficeLegacy
       :url,
       :country,
       :comment,
-      :post_address,
-      :fax_number,
-      :phone_numbers,
-      :email_addresses,
+      :post_address, # TwentyfourSevenOfficeLegacy::Address 
+      :fax_number, # TwentyfourSevenOfficeLegacy::FaxNumber
+      :phone_numbers, # Array<TwentyfourSevenOfficeLegacy::PhoneNumber>
+      :email_addresses, # Array<TwentyfourSevenOfficeLegacy::EmailAddress>
       :date_changed,
       :date_of_birth,
       :web_user_name,
@@ -22,24 +22,12 @@ module TwentyfourSevenOfficeLegacy
       :workplace,
       :department,
       :work_position,
-      :relation_data, # TwentyfourSevenOfficeLegacy::RelationData
+      :relation_data, # Array<TwentyfourSevenOfficeLegacy::RelationData>
       :customer_id
     ]
 
-    def initialize(attrs = {})
-      super attrs
-      @client = Savon.client(
-        wsdl: "http://webservices.24sevenoffice.com/CRM/Contact/PersonService.asmx?WSDL",
-        convert_request_keys_to: :camelcase
-      )
-    end
-
-    def save
-      @client.call(:save_person, message: to_hash)
-    end
-
-    def save_request_str
-      @client.operation(:save_person).build(message: to_hash).to_s
+    def initialize(attrs)
+      super(attrs)
     end
 
     def to_hash

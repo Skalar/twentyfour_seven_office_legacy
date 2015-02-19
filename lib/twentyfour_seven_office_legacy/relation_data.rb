@@ -9,5 +9,9 @@ module TwentyfourSevenOfficeLegacy
       :phone,
       :mobile
     ]
+
+     def to_hash
+      { "relation" => TwentyfourSevenOfficeLegacy.to_xml_data(self) }
+    end  
   end
 end
