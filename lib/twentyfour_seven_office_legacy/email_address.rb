@@ -11,8 +11,8 @@ module TwentyfourSevenOfficeLegacy
       super(attrs)
     end
 
-    def self.primary(nr)
-      new(type: "Primary", value: nr)
+    def self.primary(email)
+      new(type: "Primary", value: email)
     end
   end
 end
