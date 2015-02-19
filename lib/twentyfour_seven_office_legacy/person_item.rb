@@ -26,7 +26,7 @@ module TwentyfourSevenOfficeLegacy
       :customer_id
     ]
 
-    def initialize(attrs)
+    def initialize(attrs = {})
       super(attrs)
     end
 
