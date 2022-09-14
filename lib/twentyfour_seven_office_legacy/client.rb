@@ -11,7 +11,7 @@ module TwentyfourSevenOfficeLegacy
       }
 
       person_client_opts = {
-        wsdl: "http://webservices.24sevenoffice.com/CRM/Contact/PersonService.asmx?WSDL",
+        wsdl: "https://webservices.24sevenoffice.com/CRM/Contact/PersonService.asmx?WSDL",
         convert_request_keys_to: :camelcase,        
       }
 
